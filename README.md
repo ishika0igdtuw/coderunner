@@ -33,7 +33,7 @@ The core idea is to show how **scalable execution** can be achieved using the br
 ### •**Python Execution (Fully working)**
 - Designed to integrate with **Pyodide** (Python → WebAssembly)
 - Worker pipeline, message flow, and console capture implemented
-- Runtime loading can be enabled locally by placing Pyodide files in a folder
+folder
 
 ### • **C++ Execution (Architectural Stub)**
 - Separate worker included
@@ -103,7 +103,6 @@ No installation, no build step.
 
 ## 📌 Future Enhancements
 
-- Local Pyodide bundling for full Python support  
 - WebAssembly-based C++ compilation  
 - Add input fields & predefined test cases  
 - Add resource limits (CPU / RAM / Time)  
