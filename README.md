@@ -1,4 +1,4 @@
-# Scalable Code Runner – Client-side Sandbox
+#  Code Runner – Code Any Language
 
 A lightweight, browser-based code execution prototype that runs JavaScript, Python, and C++ inside isolated sandboxes using **Web Workers** and **Monaco Editor**.  
 The system is designed to demonstrate how client-side code execution engines can be structured without any backend servers.
@@ -17,6 +17,9 @@ This project is a single-page application that allows users to:
 The core idea is to show how **scalable execution** can be achieved using the browser itself—each user tab acts as its own compute node.
 
 ---
+## 📸 Preview
+
+![App Screenshot](screenshots/ui-preview.png)
 
 ## ✨ Features
 
