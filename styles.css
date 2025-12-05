@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-dark: #0d1117;
+  --bg-lighter: #1c2128;
+  --bg-panel: #161b22;
+  --text-primary: #c9d1d9;
+  --text-secondary: #8b949e;
+  --accent-green: #3fb950;
+  --accent-red: #f85149;
+  --accent-yellow: #d29922;
+  --border-color: #30363d;
+  --editor-bg: #0d1117;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Header */
+.header {
+  padding: 16px 24px;
+  background-color: var(--bg-lighter);
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Editor */
+#editor {
+  flex: 1;
+  min-height: 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Controls bar */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 24px;
+  background-color: var(--bg-lighter);
+  border-bottom: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-group label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.control-group select {
+  padding: 6px 12px;
+  background-color: var(--bg-panel);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.control-group select:hover {
+  border-color: var(--accent-green);
+}
+
+.control-group select:focus {
+  outline: none;
+  border-color: var(--accent-green);
+  box-shadow: 0 0 0 2px rgba(63, 185, 80, 0.1);
+}
+
+.run-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--accent-green);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.run-button:hover {
+  background-color: #3fb950;
+  filter: brightness(1.1);
+}
+
+.run-button:active {
+  transform: scale(0.98);
+}
+
+.run-button:disabled {
+  background-color: var(--text-secondary);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.status {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+#status-text {
+  padding: 4px 8px;
+  border-radius: 3px;
+  background-color: rgba(139, 148, 158, 0.1);
+  color: var(--text-secondary);
+}
+
+#status-text.running {
+  background-color: rgba(63, 185, 80, 0.1);
+  color: var(--accent-green);
+}
+
+#status-text.success {
+  background-color: rgba(63, 185, 80, 0.1);
+  color: var(--accent-green);
+}
+
+#status-text.error {
+  background-color: rgba(248, 81, 73, 0.1);
+  color: var(--accent-red);
+}
+
+#status-text.stub {
+  background-color: rgba(210, 153, 34, 0.1);
+  color: var(--accent-yellow);
+}
+
+/* Output panel */
+.output-panel {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  background-color: var(--bg-panel);
+  border-top: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.output-header {
+  padding: 12px 24px;
+  background-color: var(--bg-lighter);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.output-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #0f0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.output-content.empty {
+  color: var(--text-secondary);
+}
+
+/* Error styling in output */
+.output-content ::-moz-selection {
+  background-color: rgba(63, 185, 80, 0.3);
+}
+
+.output-content ::selection {
+  background-color: rgba(63, 185, 80, 0.3);
+}
+
+/* Scrollbar styling */
+.output-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.output-content::-webkit-scrollbar-track {
+  background-color: var(--bg-panel);
+}
+
+.output-content::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 4px;
+}
+
+.output-content::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-secondary);
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .control-group {
+    width: 100%;
+  }
+
+  .control-group select {
+    width: 100%;
+  }
+
+  .run-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .status {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+
+  .output-panel {
+    height: 150px;
+  }
+}
