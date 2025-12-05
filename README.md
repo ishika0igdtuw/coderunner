@@ -30,7 +30,7 @@ The core idea is to show how **scalable execution** can be achieved using the br
 - Returns execution results and errors
 - Non-blocking UI
 
-### •**Python Execution (Architected)**
+### •**Python Execution (Fully working)**
 - Designed to integrate with **Pyodide** (Python → WebAssembly)
 - Worker pipeline, message flow, and console capture implemented
 - Runtime loading can be enabled locally by placing Pyodide files in a folder
