@@ -23,26 +23,26 @@ The core idea is to show how **scalable execution** can be achieved using the br
 
 ## ✨ Features
 
-### ✔️ **JavaScript Execution (Fully Working)**
+### • **JavaScript Execution (Fully Working)**
 - Runs entirely inside a **Web Worker**
 - Custom sandboxed environment
 - Captures `console.log()` output
 - Returns execution results and errors
 - Non-blocking UI
 
-### ✔️ **Python Execution (Architected)**
+### •**Python Execution (Architected)**
 - Designed to integrate with **Pyodide** (Python → WebAssembly)
 - Worker pipeline, message flow, and console capture implemented
 - Runtime loading can be enabled locally by placing Pyodide files in a folder
 
-### ✔️ **C++ Execution (Architectural Stub)**
+### • **C++ Execution (Architectural Stub)**
 - Separate worker included
 - Structured to support:
   - WebAssembly-based C++ execution
   - Compilers like Emscripten
 - Fallback messages are shown if the runtime/toolchain is unavailable
 
-### ✔️ **Java (Stub Only)**
+### • **Java (Stub Only)**
 - UI support included  
 - Displays a clear message that JVM/WASM runtime is not part of this prototype
 
