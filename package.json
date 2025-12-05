@@ -1,8 +1,10 @@
 {
-  "name": "my-v0-project",
-  "version": "0.1.0",
+  "name": "scalable-code-runner",
+  "version": "1.0.0",
   "private": true,
+  "description": "A browser-based multi-language code runner using Monaco Editor and Web Workers.",
   "scripts": {
-    "build": "echo 'no build script'"
+    "start": "echo \"Static project - open index.html in a browser\"",
+    "build": "echo \"No build step required\""
   }
 }
