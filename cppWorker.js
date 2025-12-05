@@ -1,8 +1,6 @@
 // ============================================================================
 // C++ Execution Worker with Emscripten In-Browser Compilation
 // ============================================================================
-// This worker compiles C++ code to WebAssembly using Emscripten
-// and executes it entirely client-side with captured stdout/stderr.
 
 let emscripten
 const emscriptenReady = false
